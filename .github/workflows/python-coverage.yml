@@ -39,7 +39,8 @@ jobs:
           pytest --cov=src --cov-report=term-missing --cov-report=xml --cov-fail-under=80
 
       - name: Publish coverage report
-        uses: orgoro/coverage@v3
+        uses: orgoro/coverage@v3.2
         with:
           coverageFile: coverage.xml
           token: ${{ secrets.GITHUB_TOKEN }}
+          thresholdAll: 0.80
